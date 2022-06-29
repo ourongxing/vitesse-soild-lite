@@ -29,8 +29,7 @@ export default function Index() {
         type="text"
         class="px-4 py-2 w-250px text-center bg-transparent outline-none active:outline-none border-(~ rounded gray-200) dark:border-gray-700"
         onKeyDown={({ key }) => key === "Enter" && go()}
-        // @ts-ignore
-        onChange={({ target }) => setName(target.value)}
+        onChange={({ currentTarget }) => setName(currentTarget.value)}
       />
 
       <div>
