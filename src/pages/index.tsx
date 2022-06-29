@@ -1,6 +1,5 @@
 export default function Index() {
   const [name, setName] = createSignal("")
-
   const navigate = useNavigate()
   const go = () => {
     name() && navigate(`/hi/${encodeURIComponent(name())}`)
@@ -28,8 +27,12 @@ export default function Index() {
         placeholder="What's your name?"
         type="text"
         class="px-4 py-2 w-250px text-center bg-transparent outline-none active:outline-none border-(~ rounded gray-200) dark:border-gray-700"
-        onKeyDown={({ key }) => key === "Enter" && go()}
-        onChange={({ currentTarget }) => setName(currentTarget.value)}
+        onKeyDown={({ key }) => {
+          key === "Enter" && go()
+        }}
+        // unlike React
+        // onChange={({ currentTarget }) => setName(currentTarget.value)}
+        onInput={({ currentTarget }) => setName(currentTarget.value)}
       />
 
       <div>
