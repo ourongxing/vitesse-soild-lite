@@ -14,7 +14,7 @@ export default function Index() {
           href="https://github.com/antfu/vitesse-lite"
           target="_blank"
         >
-          Vitesse Lite for React
+          Vitesse Lite for Soild
         </a>
       </p>
       <p>
